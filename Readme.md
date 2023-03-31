@@ -35,7 +35,7 @@ The config.json file contains the following options:
 
 ## Credits
 
-Amadeus was created by [SteamPunkNation](https://github.com/SteamPunkNation> "Github") using the [Discord.js](https://discord.js.org/ "Discord.js") library and OpenAI's [GPT-3 ](https://openai.com/ "Chat GPT") API.
+Amadeus was created by [SteamPunkNation](https://github.com/SteamPunkNation "Github") using the [Discord.js](https://discord.js.org/ "Discord.js") library and OpenAI's [GPT-3 ](https://openai.com/ "Chat GPT") API.
 
 ## License
 
