@@ -1,23 +1,17 @@
 {
-  "name": "amadeus",
-  "version": "0.5",
-  "description": "Waifu Discord Bot",
+  "name": "discord-bot-amadeus",
+  "version": "0.6.0",
+  "description": "Discord bot based on Amadeus a character from Steins;Gate",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node .",
-    "lint": "eslint ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "SteamPunkNation",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/voice": "^0.14.0",
-    "axios": "^1.3.4",
-    "discord.js": "^14.7.1",
-    "eslint": "^8.35.0",
-    "libsodium-wrappers": "^0.7.11",
-    "openai": "^3.2.1",
-    "ytdl-core": "^4.11.2"
+    "discord.js": "^14.12.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
   }
 }

@@ -1,9 +1,0 @@
-{
-    "token": "APP TOKEN HERE",
-    "clientId": "BOT TOKEN HERE",
-    "guildId" : "HOME SERVER TOKEN HERE",
-    "openaiKey": "OPENAI TOKEN HERE",
-    "botPrompt": "BOT PROMPT",
-    "system": "SYSTEM NAME ",
-    "allowedRoles" : ["Role1", "Role2"]
-}
