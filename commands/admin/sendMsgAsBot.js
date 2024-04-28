@@ -15,9 +15,9 @@ module.exports = {
 
     async execute(interaction) {
         const msg = interaction.options.getString('msg');
-        const channel = client.channels.cache.get(1233246369766969345);
-        await interaction.reply('Successful');
-        channel.send(msg);
         console.log(msg);
+        await interaction.deferReply();
+        await interaction.deleteReply();
+        await interaction.channel.send(msg);
     },
 };
