@@ -1,0 +1,4 @@
+{
+    "system_alert": "[ALERT] ",
+    "allowedRoles": ["Admin", "Mod"]
+}

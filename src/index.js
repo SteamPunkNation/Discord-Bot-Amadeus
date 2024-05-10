@@ -1,13 +1,14 @@
+require('dotenv').config();
 // Require the necessary discord.js classes
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-const { token } = require('./config.json');
+const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require('discord.js');
+
 
 // Local files
 const fs = require('node:fs');
 const path = require('node:path');
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildPresences] });
 
 client.commands = new Collection();
 //========================================================//
@@ -26,7 +27,7 @@ function initCommands(){
                 client.commands.set(command.data.name, command);
             }
             else {
-                console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`)
+                console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
             }
         }
     }
@@ -59,6 +60,26 @@ async function commandInteraction(interaction){
     }
 }
 //========================================================//
+let status = [
+    {
+        name: 'bot development',
+        type: ActivityType.Streaming,
+        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+    },
+    {
+        name: ' in the sandbox'
+        //Type is Playing
+    },
+    {
+        name: ' youtube tutorials',
+        type: ActivityType.Watching,
+    },
+    {
+        name: ' sweet nothings',
+        type: ActivityType.Listening,
+    }
+]
+
 //Init commands
 initCommands();
 
@@ -71,8 +92,15 @@ client.on(Events.InteractionCreate, interaction =>{
 // The distinction between `client: Client<boolean>` and `readyClient: Client<true>` is important for TypeScript developers.
 // It makes some properties non-nullable.
 client.once(Events.ClientReady, readyClient => {
-	console.log(`Ready! Logged in as ${readyClient.user.tag}`);
+	console.log(`✅ Logged in as ${readyClient.user.tag}`);
+    let rand = Math.floor(Math.random() * status.length);
+    client.user.setActivity(status[rand]);
+
+    setInterval(() => {
+        let rand = Math.floor(Math.random() * status.length);
+        client.user.setActivity(status[rand]);
+    }, 3600000);
 });
 
 // Log in to Discord with your client's token
-client.login(token);
+client.login(process.env.TOKEN);
