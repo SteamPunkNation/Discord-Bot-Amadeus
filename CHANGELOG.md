@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.3.1] 2024-07-19
+### Added
+- Online staff count to analytics page
+- Total "special" role count to analytics page
+- Third new analytics page (W.I.P)
+
+### Changed
+- New modular embeded menu
+- Updated send msg as bot to respond faster and hide the command executer
+
 ## [0.3.0] 2024-05-09
 ### Added
 - Randomized bot status's

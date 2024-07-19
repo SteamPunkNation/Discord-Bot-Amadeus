@@ -20,8 +20,7 @@ module.exports = {
 
 		console.log(`${who} told Amadeus to say: ${msg}`);
 
-		await interaction.deferReply();
-		await interaction.deleteReply();
 		await interaction.channel.send(msg);
+		await interaction.reply({ content: `Recieved!`, ephemeral: true});
 	},
 };
